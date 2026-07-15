@@ -17,8 +17,6 @@ class Ball_Object:
 	def drawObject(self, surface):
 		pygame.draw.circle(surface, self.color, self.center, self.radius)
 
-		print(self.center[1])
-
 	def moveObject(self):
 		ground = 480
 
