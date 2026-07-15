@@ -40,7 +40,7 @@ screen_width = 500
 screen_height = 200
 
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.caption("Ball Physics - Wall/Floor Collision")
+pygame.display.set_caption("Ball Physics - Wall/Floor Collision")
 
 clock = pygame.time.Clock()
 
