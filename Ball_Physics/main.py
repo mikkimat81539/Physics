@@ -10,9 +10,18 @@ class Ball_Object:
 		self.center = (self.x_pos, self.y_pos)
 		self.radius = radius
 		self.color = color
+		self.speed = 5
+		self.gravity = 0.8
+		self.speed_drop = 1
 
 	def drawObject(self, surface):
 		pygame.draw.circle(surface, self.color, self.center, self.radius)
+
+	def moveObject(self):
+		key = pygame.key.get_pressed()
+
+		if key[pygame.K_SPACE]:
+			print("pressed")
 
 # SCREEN
 screen = pygame.display.set_mode((500, 500))
@@ -29,8 +38,14 @@ while running:
 		if event.type == pygame.QUIT:
 			running = False
 
+		if event.type == pygame.KEYDOWN:
+			if event.key == pygame.K_SPACE:
+				print("pressed")
+
+	
 	screen.fill("white")
 
+	# DRAW
 	ball.drawObject(screen)
 
 	pygame.display.flip()
