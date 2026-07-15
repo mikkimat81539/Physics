@@ -20,10 +20,12 @@ class Ball_Object:
 		print(self.center[1])
 
 	def moveObject(self):
+		ground = 480
+
 		self.velocity += self.gravity
 		self.center[1] += self.velocity
 
-		if self.center[1] >= (480 - self.radius):
+		if self.center[1] >= (ground - self.radius):
 			self.velocity = -self.velocity
 
 # INITIALIZE
