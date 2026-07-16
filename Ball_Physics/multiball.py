@@ -84,7 +84,7 @@ ground1 = Platform(20, 150, "black")
 velocity1 = 7
 
 # GRAVITY
-gravity1 = 0.8 
+gravity1 = 0.7 
 
 # MOVEMENT FUNCTION
 def movement1(ball, platform, velocity, gravity):
@@ -95,15 +95,19 @@ def movement1(ball, platform, velocity, gravity):
 		# velocity = -velocity * gravity
 
 	if ball.center[1] < (platform.y_pos - (ball.radius - 5)):
+		# print(f"START: {platform.y_pos - (ball.radius-10)}")
+		# print(f"START ball {ball.center[1]}")
 		velocity += gravity
 		ball.center[1] += velocity
 
 	elif ball.center[1] >= (platform.y_pos - (ball.radius - 5)):
+		print(f"Platform END: {platform.y_pos - (ball.radius-5)}")
+		print(f"ball {ball.center[1]}")
+
+		print(f"Velocity: {velocity}\n")
+
 		ball.center[1] = platform.y_pos - ball.radius # reset the ball position after collision
 		velocity = -velocity * gravity
-
-		if abs(velocity) < 1: 
-			velocity = 0
 
 	return velocity
 
