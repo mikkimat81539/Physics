@@ -58,7 +58,7 @@ class Platform:
 		self.y_pos = y_pos
 		
 		self.start_pos = pygame.math.Vector2(self.x_pos, self.y_pos)
-		self.end_pos = pygame.math.Vector2(self.start_pos[0] + 150, self.start_pos[1])
+		self.end_pos = pygame.math.Vector2(self.start_pos[0] + 160, self.start_pos[1])
 
 		self.color = color
 
