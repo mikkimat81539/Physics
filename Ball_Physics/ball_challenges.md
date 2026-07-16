@@ -10,4 +10,5 @@
 - 9) Get a ball to spin while in the air
 - 10) Create environment so ball can move based on enviroment (slope)
 - 11) Have different size balls and move based on size (weight)
-- 12) Have all ball physics in one file called 'main' and put in each individual surface
+- 12) Create brick breaker
+- 13) Have all ball physics in one file called 'main' and put in each individual surface
