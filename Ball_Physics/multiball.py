@@ -46,15 +46,9 @@ class Ball_Object:
 		self.radius = radius
 		self.color = color
 
-		self.velocity = 7
-
 	def draw_object(self, surface):
 		pygame.draw.circle(surface, self.color, self.center, self.radius)
 
-	def move_object(self):
-		self.center[1] += self.velocity # velocity is increasing my ball position on y-axis
-
-# PLATFORM CLASS
 class Platform:
 	def __init__(self, x_pos, y_pos, color):
 		self.x_pos = x_pos
@@ -86,6 +80,11 @@ ball1 = Ball_Object(surface1.rect.centerx - 10, 20, 10, "white")
 # PLATFORM OBJECT
 ground1 = Platform(20, 150, "black")
 
+# MOVEMENT FUNCTION
+def movement(ball):
+	velocity = 7
+	ball.center[1] += velocity
+
 # GAME LOOP
 running = True
 
@@ -97,7 +96,7 @@ while running:
 	screen.fill("white")
 
 	# MOVEMENT
-	ball1.move_object()
+	movement(ball1)
 
 	# DRAW
 	ball1.draw_object(surface1.surface)
