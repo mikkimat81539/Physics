@@ -43,13 +43,16 @@ class Ball_Object:
 		self.x_pos = x_pos
 		self.y_pos = y_pos
 		self.center = pygame.math.Vector2(self.x_pos, self.y_pos)
-
 		self.radius = radius
-		
 		self.color = color
+
+		self.velocity = 7
 
 	def draw_object(self, surface):
 		pygame.draw.circle(surface, self.color, self.center, self.radius)
+
+	def move_object(self):
+		self.center[1] += self.velocity # velocity is increasing my ball position on y-axis
 
 # PLATFORM CLASS
 class Platform:
@@ -65,6 +68,8 @@ class Platform:
 	def draw_platform(self, surface):
 		pygame.draw.line(surface, self.color, self.start_pos, self.end_pos, 4)
 
+# CLOCK
+clock = pygame.time.Clock()
 
 # SCREEN
 screen_w, screen_h = 800, 600
@@ -76,7 +81,7 @@ pygame.display.set_caption("Multi-Ball")
 surface1 = Ball_Surface(10, 10, 200, 200, "pink")
 
 # BALL OBJECTS
-ball1 = Ball_Object(surface1.rect.centerx - 10, surface1.rect.centery - 10, 10, "white")
+ball1 = Ball_Object(surface1.rect.centerx - 10, 20, 10, "white")
 
 # PLATFORM OBJECT
 ground1 = Platform(20, 150, "black")
@@ -91,6 +96,9 @@ while running:
 
 	screen.fill("white")
 
+	# MOVEMENT
+	ball1.move_object()
+
 	# DRAW
 	ball1.draw_object(surface1.surface)
 	ground1.draw_platform(surface1.surface)
@@ -98,5 +106,7 @@ while running:
 	surface1.draw_surface(screen)
 
 	pygame.display.flip()
+
+	clock.tick(60)
 
 pygame.quit()
