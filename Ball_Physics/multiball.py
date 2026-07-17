@@ -75,7 +75,7 @@ class Platform:
 clock = pygame.time.Clock()
 
 # SCREEN
-screen_w, screen_h = 800, 600
+screen_w, screen_h = 900, 300
 
 screen = pygame.display.set_mode((screen_w, screen_h))
 pygame.display.set_caption("Multi-Ball")
