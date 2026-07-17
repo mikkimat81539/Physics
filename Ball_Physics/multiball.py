@@ -48,7 +48,7 @@ class Ball_Object:
 	def draw_object(self, surface):
 		pygame.draw.circle(surface, self.color, self.center, self.radius)
 
-	def move_object(self, surface):
+	def move_object(self, surface): # for movement along x and y axis with collision
 		self.center[0] += self.velocity_x
 		self.center[1] += self.velocity_y
 
@@ -68,7 +68,6 @@ class Platform:
 
 		self.thickness = thickness
 		self.color = color
-
 
 		self.vel_x = 5
 		self.vel_y = 5
@@ -146,8 +145,8 @@ ball3.velocity_x = 5
 ball3.velocity_y = 0
 
 ball4 = Ball_Object(100, 20, 10, "green")
-ball3.velocity_x = 0
-ball3.velocity_y = 0
+ball4.velocity_x = 0
+ball4.velocity_y = 5
 
 
 # PLATFORM OBJECT
@@ -199,7 +198,7 @@ def movement1(ball, platform, velocity, gravity):
 	return velocity
 
 
-def ball_collision(ball_1, ball_2, ball1_speed, ball2_speed):
+def ball_collision(ball_1, ball_2, ball1_speed, ball2_speed): # Collision between two points
 
 	x_eval = (ball_2.center[0] - ball_1.center[0]) ** 2 # (x2 - x1)^2
 	y_eval = (ball_2.center[1] - ball_1.center[1]) ** 2 # (y2 - y1)^2
@@ -219,6 +218,17 @@ def ball_collision(ball_1, ball_2, ball1_speed, ball2_speed):
 
 	return ball1_speed, ball2_speed
 
+def platform_collision(ball, platform, ball_speed):
+	ball.center[1] += ball_speed
+
+	if platform.start_pos[0] <= ball.center[0] <= platform.end_pos[0] and ball.center[1] + ball.radius >= platform.start_pos[1]:
+		ball_speed = -ball_speed
+
+	if ball.center[1] - ball.radius < 5:
+		ball_speed = -ball_speed
+
+	return ball_speed
+
 
 # GAME LOOP
 running = True
@@ -237,6 +247,7 @@ while running:
 
 	# MOVEMENT
 	velocity1 = movement1(ball1, ground1, velocity1, gravity1)
+
 	ball2.move_object(surface3.surface)
 	ball3.move_object(surface3.surface)
 
@@ -245,6 +256,9 @@ while running:
 
 	# COLLISION
 	ball2.velocity_x, ball3.velocity_x = ball_collision(ball2, ball3, ball2.velocity_x, ball3.velocity_x)
+
+
+	ball4.velocity_y = platform_collision(ball4, platform, ball4.velocity_y)
 
 	# DRAW
 	
