@@ -6,13 +6,20 @@
 - 5) Apply charge to a ball when spacebar is held
 - 6) Apply gravity settings
 - 7) Apply direction of where ball should bounce (show arrow)
+	- Apply direction
+	- Apply projectile motion
 - 8) Get a ball to roll along the x-axis using arrow keys
 - 9) Get a ball to spin while in the air
 - 10) Create environment so ball can move based on enviroment
 	- slopes
 	- platforms (idle, moving automatically, spinning)
+	- ball collection
 - 11) Have different size balls and move based on size (weight)
-- 12) Create brick breaker
-- 13) Have all ball physics in one file called 'main' and put in each individual screen
+- 12) Create brick breaker simulation
+- 13) Create Pool simulation
+- 14) Create Beer Bong Simulation
+- 16) Create Golf Simulation
+- 15) Have all ball physics in one file called 'main' and put in each individual screen
+	- Display in pygbag
 	- Have individual surface with a play button
 	- When button is pressed go to the simulation

@@ -5,7 +5,9 @@ import pygame, random
 # First surface: Each bounce it changes color (vertical) -- DONE
 # Second surface: collides with other balls. bouncing along floor and walls -- DONE
 
-# third surface: have a ball bounce off of roof, wall and moving platform controlled with keys
+# Third surface: get two balls to collide with each other
+
+# Fourth surface: have a ball bounce off of roof, wall and moving platform controlled with keys
 	# similar to brick breaker
 
 
@@ -90,6 +92,15 @@ ball1 = Ball_Object(surface1.rect.centerx - 10, 20, 10, "white")
 ball_list = [Ball_Object(random.randint(10, 70), random.randint(10, 70), 10, "black"), Ball_Object(random.randint(10, 70), random.randint(10, 70), 10, "white"), Ball_Object(random.randint(10, 70), random.randint(10, 70), 10, "purple")]
 
 
+ball2 = Ball_Object(25, 100, 20, "yellow") 
+ball2.velocity_x = 5
+ball2.velocity_y = 0
+
+ball3 = Ball_Object(175, 100, 20, "orange") 
+ball3.velocity_x = 5
+ball3.velocity_y = 0
+
+
 # PLATFORM OBJECT
 ground1 = Platform(20, 150, "black")
 
@@ -136,6 +147,9 @@ def movement1(ball, platform, velocity, gravity):
 	return velocity
 
 
+def ball_collision(ball_1, ball_2):
+	pass
+
 # GAME LOOP
 running = True
 
@@ -153,9 +167,15 @@ while running:
 
 	# MOVEMENT
 	velocity1 = movement1(ball1, ground1, velocity1, gravity1)
+	ball2.move_object(surface3.surface)
+	ball3.move_object(surface3.surface)
 
 	# DRAW
 	ball1.draw_object(surface1.surface)
+
+	ball2.draw_object(surface3.surface)
+	ball3.draw_object(surface3.surface)
+
 
 	ground1.draw_platform(surface1.surface)
 
