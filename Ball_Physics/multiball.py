@@ -75,7 +75,7 @@ class Platform:
 clock = pygame.time.Clock()
 
 # SCREEN
-screen_w, screen_h = 900, 300
+screen_w, screen_h = 850, 300
 
 screen = pygame.display.set_mode((screen_w, screen_h))
 pygame.display.set_caption("Multi-Ball")
@@ -84,7 +84,7 @@ pygame.display.set_caption("Multi-Ball")
 surface1 = Ball_Surface(10, 10, 200, 200, "pink")
 surface2 = Ball_Surface(220, 10, 200, 200, "#82edf5")
 surface3 = Ball_Surface(430, 10, 200, 200, "#7ff58f")
-
+surface4 = Ball_Surface(640, 10, 200, 200, "#ffed75")
 
 # BALL OBJECTS
 ball1 = Ball_Object(surface1.rect.centerx - 10, 20, 10, "white")
@@ -203,6 +203,7 @@ while running:
 	surface1.draw_surface(screen)
 	surface2.draw_surface(screen)
 	surface3.draw_surface(screen)
+	surface4.draw_surface(screen)
 
 	pygame.display.flip()
 
