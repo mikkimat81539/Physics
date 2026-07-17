@@ -1,7 +1,7 @@
 # Different Ball Physic simulataions
 - 1) Get a ball to bounce using spacebar -- DONE
 - 2) Get ball to bounce around floor and walls -- DONE
-- 3) Get multiple balls of different random colors to collide
+- 3) Get multiple balls of different random colors to collide -- DONE
 - 4) Create Newtons Cradle
 - 5) Apply charge to a ball when spacebar is held
 - 6) Apply gravity settings

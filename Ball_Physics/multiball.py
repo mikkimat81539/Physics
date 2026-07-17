@@ -7,8 +7,7 @@ import pygame, random, math
 
 # Third surface: get two balls to collide with each other -- DONE
 
-# Fourth surface: have a ball bounce off of roof, wall and moving platform controlled with keys
-	# similar to brick breaker
+# Fourth surface: have a ball bounce off of roof, wall and moving platform controlled with keys - DONE
 
 
 # INITALIZE
