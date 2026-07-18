@@ -33,8 +33,8 @@ clock = pygame.time.Clock()
 screen = pygame.display.set_mode((500, 500))
 
 # BALL
-green_ball = Ball(20, 20, 10, 2, 1, "green")
-red_ball = Ball(100, 100, 20, 5, 1, "red")
+green_ball = Ball(20, 20, 10, 0.05, 4, "green")
+red_ball = Ball(100, 100, 20, 0.1, 2, "red")
 
 
 KE_green = green_ball.kinetic_energy()

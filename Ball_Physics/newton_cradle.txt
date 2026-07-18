@@ -1,4 +1,5 @@
 - Kinetic Energy is energy from motion
+- Kinetic Energy is the motion energy of an object
 	EXAMPLE:
 		- A rolling Bowling ball
 		- Moving car
@@ -8,7 +9,7 @@
 	- Any object in motion has kinetic energy
 	- Kinetic energy depends on both mass and speed
 		- depends more on the speed
-	- KE = 1/2 (m*v^2)
+	- KE equation = 1/2 (m*v^2)
 		- m = mass
 		- v = velocity
 
