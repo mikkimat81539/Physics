@@ -6,8 +6,8 @@
 - 5) Apply direction of where ball should bounce (show arrow)
 	- Apply direction
 	- Apply projectile motion
-- 6) Create Newtons Cradle 
-- 7) Apply gravity settings
+- 6) Apply gravity settings
+- 7) Create Newtons Cradle
 - 8) Get a ball to roll along the x-axis using arrow keys
 - 9) Get a ball to spin while in the air
 - 10) Create environment so ball can move based on enviroment
