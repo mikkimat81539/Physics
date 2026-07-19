@@ -39,6 +39,7 @@ clock = pygame.time.Clock()
 
 # SCREEN
 screen = pygame.display.set_mode((500, 500))
+pygame.display.set_caption("Kinetic Energy")
 
 # BALL
 green_ball = Ball(50, 20, 10, 0.05, 4, "green")
