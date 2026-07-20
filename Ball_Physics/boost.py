@@ -15,10 +15,25 @@ class Ball:
 		self.x_pos = x_pos
 		self.text = text
 
-		self.velocity = 7
+		self.velocity = 1
 
 	def draw_ball(self, surface):
-		surface.addstr(self.y_pos // 2, self.x_pos // 2, self.text)
+		surface.addstr(int(self.y_pos / 2), int(self.x_pos // 2), self.text)
+
+		curses.napms(16) # pauses the program for a number of milliseconds.
+
+
+	def move_ball(self, surface, surface_height):
+		while True:
+			dt = 1 / 60 # FPS
+			self.y_pos += self.velocity * dt
+
+			if self.y_pos >= surface_height:
+				self.velocity = 0
+
+			self.draw_ball(surface)
+
+			surface.refresh()
 
 def main(surface):
 	surface.clear()
@@ -35,12 +50,15 @@ def main(surface):
 
 	curses.curs_set(0) # cursor visibility
 
-	ball = Ball(win_height, win_width, "O")
-	ball.draw_ball(win)
+	ball = Ball(win_height, win_width, "O") # ball object
 
-	# Draw_Ball(win, win_height, win_width, "O") # Draw Ball function
+	ball.move_ball(win, win_height) # moving the ball
+	# ball.draw_ball(win) # Display ball
 
-	win.refresh()
+	# win.refresh()
+
+	# curses.napms(100) # pauses the program for a number of milliseconds.
+
 	win.getkey()
 
 	curses.endwin()	
