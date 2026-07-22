@@ -2,7 +2,7 @@
 - 1) Get a ball to bounce using spacebar -- DONE
 - 2) Get ball to bounce around floor and walls -- DONE
 - 3) Get multiple balls of different random colors to collide -- DONE
-- 4) Apply charge to a ball when spacebar is held
+- 4) Apply charge to a ball when spacebar is held -- DONE
 - 5) Apply direction of where ball should bounce (show arrow)
 	- Apply direction
 	- Apply projectile motion
